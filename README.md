@@ -1,12 +1,12 @@
 # 2022 Checkly Product Workshop 
 
-Hello and welcome! In this repository you find both the solutions to the exercise and a walkthrough on how to get them up and running (in this here README).
+Welcome raccoons! :raccoon: In this repository you find both the solutions to the exercise and a walkthrough on how to get them up and running (in this here README).
 
 `
 Note for technical users: the below guide is for your colleagues who might not be familiar / have git installed - no need for you to follow this as you already know your way around.
 `
 
-## Setup
+## Setup :flight_departure:	
 
 You can get up and running with Terraform and Checkly in just a few minutes! Follow the steps below.
 
@@ -31,7 +31,7 @@ Otherwise, you can manually download and install Terraform:
 
 | Tip: you can open your terminal by pressing `Cmd` + `Space`, then entering "terminal" and pressing `Enter`
 
-### Set up Terraform project :flight_departure:	
+### Set up Terraform project
 
 In your terminal:
 
