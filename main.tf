@@ -49,6 +49,11 @@ resource "checkly_check" "get-near-approach-object" {
       target     = "2"
     }
   }
+
+  alert_channel_subscription {
+    channel_id = checkly_alert_channel.email_channel.id
+    activated  = true
+  }
   
 }
 
@@ -68,4 +73,15 @@ resource "checkly_check" "browser-check" {
 
   script = file("${path.module}/scripts/dadjoke.js")
 
+  alert_channel_subscription {
+    channel_id = checkly_alert_channel.email_channel.id
+    activated  = true
+  }
+
+}
+
+resource "checkly_alert_channel" "email_channel" {
+  email {
+    address = "<MY_EMAIL_ADDRESS>"
+  }
 }

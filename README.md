@@ -1,6 +1,6 @@
 # 2022 Checkly Product Workshop 
 
-Welcome raccoons! :raccoon: In this repository you find both the solutions to the exercise and a walkthrough on how to get them up and running (in this here README).
+Welcome raccoons! :hello: In this repository you find both the solutions to the exercise and a walkthrough on how to get them up and running (in this here README).
 
 `
 Note for technical users: the below guide is for your colleagues who might not be familiar / have git installed - no need for you to follow this as you already know your way around.
@@ -16,15 +16,7 @@ If you already have an account you have access to, you can skip this step. Other
 
 ### Download & install Terraform
 
-There's different ways you can install Terraform.
-If you have [homebrew](https://brew.sh/) installed, you can run the following in your terminal:
-
-```
-brew tap hashicorp/tap
-brew install hashicorp/tap/terraform
-```
-
-Otherwise, you can manually download and install Terraform:
+You can manually download and install Terraform:
 
 * [M1 MacBook](https://releases.hashicorp.com/terraform/1.3.1/terraform_1.3.1_darwin_arm64.zip) or
 * [Intel MacBook](https://releases.hashicorp.com/terraform/1.3.1/terraform_1.3.1_darwin_amd64.zip)
@@ -37,23 +29,31 @@ In your terminal:
 
 ```
 mkdir terraform-challenge && cd $_
-touch main.tf
 ```
 
-Download `main.tf` from this repository and move it into the folder you have created.
+Copy [main.tf](https://raw.githubusercontent.com/ragog/retreat-2022-workshop-walkthrough/master/main.tf) from this repository to the folder you have created.
+
+```
+nano main.tf
+```
+
+Paste your code with `Cmd` + `v` - now find `<MY_EMAIL_ADDRESS>` and replace it with your Checkly email address.
+Once you are done, save the file with `Ctrl` + `x`, then press `Enter`.
+
+Great! You have now written your Terraform config to the `main.tf` file in your project's folder! Time to initiate the project.
 
 ```
 terraform init
 ```
 
-Get your [account ID](https://app.checklyhq.com/settings/account/general) and create an [API key](https://app.checklyhq.com/settings/user/api-keys) on Checkly. Don't lose them as we need to pass those on to Terraform.
+Get your [account ID](https://app.checklyhq.com/settings/account/general) and create an [API key](https://app.checklyhq.com/settings/user/api-keys) on Checkly. Don't lose them as we need to pass those on to Terraform by exporting those values as environment variables.
 
 ```
 export TF_VAR_checkly_api_key=YOUR_API_KEY
 export TF_VAR_checkly_account_id=YOUR_ACCOUNT_ID
 ```
 
-You are now ready to run your Terraform project.
+You are now ready to run your Terraform project - it will automatically create your checks and alerts!
 
 ## Run your project :rocket:
 
